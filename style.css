@@ -1,0 +1,166 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #31314e;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  color: #eee;
+}
+
+/* Starry background animation */
+.stars-bg {
+  background: linear-gradient(135deg, #393658, #1f1f35);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 200% 200%;
+  animation: moveGradient 10s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text Titles */
+.wrapper {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #f5f4f3;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #bfa9ff;
+  margin-bottom: 2rem;
+}
+
+/* CARD */
+.card-container {
+  perspective: 1600px;
+  display: inline-block;
+}
+
+.card {
+  width: 370px;
+  height: 560px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.3s ease;
+  border-radius: 16px;
+}
+
+.card:hover,
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Faces */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+  border: 3px solid gold;
+}
+
+/* Front */
+.card-front {
+  background: linear-gradient(135deg, #fff7e6, #ffe0b2);
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #6a1b9a;
+}
+
+.card-subtext {
+  margin-top: 0.5rem;
+  color: #444;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Back */
+.card-back {
+  background: linear-gradient(135deg, #512da8, #9575cd);
+  transform: rotateY(180deg);
+  padding: 1.8rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-message {
+  text-align: center;
+}
+
+.back-message h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fdd835;
+}
+
+.back-message p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: gold;
+  margin: 1.2rem 0;
+  width: 60%;
+}
+
+.highlight {
+  color: #ffe57f;
+  font-weight: bold;
+}
+
+/* Hint */
+.hint-text {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}
